@@ -1,0 +1,6 @@
+rootProject.name = 'papio-cloudalibaba'
+include 'papio-register'
+include 'papio-gateway'
+include 'papio-common'
+include 'papio-auth'
+

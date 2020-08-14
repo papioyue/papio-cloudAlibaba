@@ -1,0 +1,152 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.2.8.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id "com.bmuschko.docker-spring-boot-application" version "6.6.0"
+}
+
+repositories {
+    mavenCentral()
+}
+
+group 'org.papio'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'eclipse'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'jacoco'
+
+    group 'org.papio'
+    version '1.0-SNAPSHOT'
+
+    sourceCompatibility = 1.8
+
+    ext {
+        set('springBootVersion', "2.2.8.RELEASE")
+        set('springBootAdminVersion', "2.2.1")
+        set('springCloudVersion', "Hoxton.SR3")
+        set('springCloudAlibabaVersion', "2.2.1.RELEASE")
+        set('springFrameworkVersion', "5.2.5.RELEASE")
+        set('springSecurityVersion', "5.2.2.RELEASE")
+        set('springOauth2Version', "2.3.4.RELEASE")
+        set('junitJupiterVersion', "5.5.2")
+        set('junitPlatformLauncherVersion', "1.5.2")
+
+        set('commonsLangVersion', "3.10")
+        set('lombokVersion', "1.18.12")
+        set('jacksonVersion', "2.10.3")
+        set('xstreamVersion', "1.4.12")
+        set('slf4jVersion', "1.7.30")
+        set('yamlVersion', "1.26")
+        set('aspectjVersion', "1.9.5")
+        set('redissonVersion', "3.12.4")
+        set('druidVersion', "1.1.21")
+        set('mybatisPlusVersion', "3.3.1")
+        set('velocityEngineVersion', "2.2")
+        set('pagehelperSpringVersion', "1.2.13")
+        set('pagehelperVersion', "5.1.11")
+        set('swagger2Version', "2.9.2")
+        set('knife4jVersion', "2.0.2")
+        set('servletVersion', "4.0.1")
+        set('sentinelVersion', "1.7.1")
+        set('feignVersion', "10.4.0")
+        set('ribbonVersion', "2.3.0")
+        set('httpClientVersion', "4.5.12")
+    }
+
+    repositories {
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        maven { url "https://repo.spring.io/milestone" }
+        maven { url "https://plugins.gradle.org/m2/" }
+        mavenCentral()
+        jcenter()
+    }
+
+    configurations {
+        developmentOnly
+        runtimeClasspath {
+            extendsFrom developmentOnly
+        }
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+
+        // 排除 tomcat 依赖（使用 undertow）
+        implementation.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+        // 排除 logback 依赖（使用 log4j2）
+        implementation.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter-undertow'
+
+        implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+        implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml'  // 添加 yml 依赖（用于识别 log4j2.yml 文件）
+
+        implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+        compileOnly "org.projectlombok:lombok:${lombokVersion}"
+        annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+        testImplementation('org.springframework.boot:spring-boot-starter-test') {
+            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        }
+
+        testImplementation "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
+        testImplementation "org.junit.jupiter:junit-jupiter-params:${junitJupiterVersion}"
+        testImplementation "org.junit.platform:junit-platform-launcher:${junitPlatformLauncherVersion}"
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "de.codecentric:spring-boot-admin-dependencies:${springBootAdminVersion}"
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+            mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${springCloudAlibabaVersion}"
+        }
+    }
+
+    test {
+        useJUnitPlatform()
+        ignoreFailures = true
+    }
+
+    /**
+     * 添加jacoco测试覆盖率
+     */
+    jacocoTestReport {
+        reports {
+            xml.enabled true
+            csv.enabled true
+            html.enabled true
+
+            xml.destination file("${buildDir}/reports/jacoco/jacocoReport/jacocoXml.xml")
+            csv.destination file("${buildDir}/reports/jacoco/jacocoReport/jacocoCsv.csv")
+            html.destination file("${buildDir}/reports/jacoco/jacocoReport/jacocoHtml")
+        }
+    }
+    tasks.check.dependsOn jacocoTestReport
+
+    /**
+     * clean 命令时删除 logs 目录
+     */
+    task cleanOutDir(type: Delete) {
+        delete "${projectDir}/logs"
+        delete "${rootDir}/logs"
+    }
+    tasks.clean.dependsOn(cleanOutDir)
+
+    /**
+     * 根据环境打包默认dev开发环境，命令：./gradlew -x test clean bootJar -Denv=dev
+     */
+    def env = System.getProperty("env") ?: "dev"
+    /*processResources {
+        filter ReplaceTokens, tokens: [env: env]
+    }*/
+
+}

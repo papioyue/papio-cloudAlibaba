@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a89f70ed-92ae-4c11-94d0-5da95ba182cb" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/papio-auth">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="papio-cloudalibaba" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ez5aSQP4LyNZmxQUn0hKo4z9RK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/papio-gateway/src/main/resources" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\learnSpace\papio-cloudalibaba\papio-gateway\src\main\resources" />
+      <recent name="E:\learnSpace\papio-cloudalibaba\papio-gateway\src\main\java\com\papio\gateway\handler" />
+      <recent name="E:\learnSpace\papio-cloudalibaba\papio-common\src\main\java\com\papio\common\tuple" />
+      <recent name="E:\learnSpace\papio-cloudalibaba\papio-common\src\main\java\com\papio\common\result" />
+      <recent name="E:\learnSpace\papio-cloudalibaba\papio-common\src\main\java\com\papio\common\constant" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="papio-cloudalibaba.papio-gateway.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.papio.gateway.GatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a89f70ed-92ae-4c11-94d0-5da95ba182cb" name="Default Changelist" comment="" />
+      <created>1595311643523</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595311643523</updated>
+      <workItem from="1595311646670" duration="1977000" />
+      <workItem from="1595318980548" duration="7900000" />
+      <workItem from="1595399642561" duration="615000" />
+      <workItem from="1597134849616" duration="645000" />
+      <workItem from="1597137281025" duration="86000" />
+      <workItem from="1597141065123" duration="13000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="765" y="223" key="#com.intellij.ide.util.MemberChooser" timestamp="1595323675350">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="223" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1595323675350" />
+    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1595319472266">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1595319472266" />
+    <state x="600" y="137" key="NewModule_or_Project.wizard" timestamp="1595319475876">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="600" y="137" key="NewModule_or_Project.wizard/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1595319475876" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1597137365120">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1597137365120" />
+    <state x="334" y="43" key="new project wizard" timestamp="1595319154860">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="334" y="43" key="new project wizard/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1595319154860" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1595320702780">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1595320702780" />
+  </component>
+</project>

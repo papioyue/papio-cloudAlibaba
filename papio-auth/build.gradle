@@ -1,0 +1,53 @@
+plugins {
+    id 'java'
+}
+
+group 'org.papio'
+description '权限认证服务'
+
+apply plugin: 'application'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'com.bmuschko.docker-spring-boot-application'
+
+mainClassName = 'com.papio.auth.AuthApplication'
+
+dependencies {
+    implementation project(':papio-common')
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config'
+
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel'
+
+    implementation 'org.springframework.boot:spring-boot-starter-amqp'
+    implementation 'org.springframework.cloud:spring-cloud-stream'
+    implementation 'org.springframework.cloud:spring-cloud-stream-binder-rabbit'
+
+    // 使用 Skywalking 时，依赖 spring-cloud-starter-sleuth 即可
+    //implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
+    // 使用 Zipkin 时，依赖 spring-cloud-starter-zipkin 即可
+    implementation 'org.springframework.cloud:spring-cloud-starter-zipkin'
+
+    implementation 'org.springframework.boot:spring-boot-configuration-processor'
+
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+
+    implementation 'org.springframework.cloud:spring-cloud-starter-oauth2'
+
+    runtimeOnly 'mysql:mysql-connector-java'
+    implementation "com.alibaba:druid-spring-boot-starter:${druidVersion}"
+    implementation "com.baomidou:mybatis-plus-boot-starter:${mybatisPlusVersion}"
+    implementation "com.baomidou:mybatis-plus-generator:${mybatisPlusVersion}"
+    implementation "org.apache.velocity:velocity-engine-core:${velocityEngineVersion}"
+
+    implementation "com.github.pagehelper:pagehelper-spring-boot-starter:${pagehelperSpringVersion}"
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+    //implementation 'org.springframework.boot:spring-boot-starter-cache'
+
+    implementation "com.github.xiaoymin:knife4j-spring-boot-starter:${knife4jVersion}"
+}
