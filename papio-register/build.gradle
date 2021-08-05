@@ -9,7 +9,7 @@ apply plugin: 'application'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'com.bmuschko.docker-spring-boot-application'
 
-mainClassName = 'com.papio.gateway.GatewayApplication'
+mainClassName = 'com.papio.register.RegisterApplication'
 
 configurations {
     implementation.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-undertow'

@@ -40,7 +40,7 @@ dependencies {
     runtimeOnly 'mysql:mysql-connector-java'
     implementation "com.alibaba:druid-spring-boot-starter:${druidVersion}"
     implementation "com.baomidou:mybatis-plus-boot-starter:${mybatisPlusVersion}"
-    implementation "com.baomidou:mybatis-plus-generator:${mybatisPlusVersion}"
+    implementation "com.baomidou:mybatis-plus-generator:${generatorVersion}"
     implementation "org.apache.velocity:velocity-engine-core:${velocityEngineVersion}"
 
     implementation "com.github.pagehelper:pagehelper-spring-boot-starter:${pagehelperSpringVersion}"
